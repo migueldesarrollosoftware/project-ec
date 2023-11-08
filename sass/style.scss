@@ -3,6 +3,7 @@
 * {
     box-sizing: border-box;
     // font-size: 62.5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 a {
@@ -14,6 +15,9 @@ a {
     }
 }
 
+hr {
+    color: pink;
+}
 
 .hd {
   
@@ -34,7 +38,7 @@ main {
 
 footer {
     background: $dark;
-    height: 15rem;
+    height: 18rem;
     color: white;
     
     .gotop {

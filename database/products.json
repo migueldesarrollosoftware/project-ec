@@ -1,5 +1,6 @@
 [
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a0",
         "name": "pastel 1",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -7,6 +8,7 @@
         "price": 124.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a1",
         "name": "pastel 2",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -14,6 +16,7 @@
         "price": 159.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a2",
         "name": "pastel 3",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -21,6 +24,7 @@
         "price": 163.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a3",
         "name": "pastel 4",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -28,6 +32,7 @@
         "price": 156.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a4",
         "name": "pastel 5",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -35,6 +40,7 @@
         "price": 145.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a5",
         "name": "pastel 6",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -42,6 +48,7 @@
         "price": 143.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a6",
         "name": "pastel 7",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -49,6 +56,7 @@
         "price": 112.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a7",
         "name": "pastel 8",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -56,6 +64,7 @@
         "price": 150.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a8",
         "name": "pastel 9",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -63,6 +72,7 @@
         "price": 114.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a9",
         "name": "pastel 10",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -70,6 +80,7 @@
         "price": 110.19
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0aa10",
         "name": "pastel 11",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -77,6 +88,7 @@
         "price": 113.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0aa0a11",
         "name": "pastel 12",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -84,6 +96,7 @@
         "price": 115.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-a0a0-aa0a0a0a0a12",
         "name": "pastel 13",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -91,6 +104,7 @@
         "price": 116.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-a0a0-aa0a-a0a0a0a0a13",
         "name": "pastel 14",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -98,6 +112,7 @@
         "price": 117.99
     },
     {
+        "uuid": "a0a0a0a0-a0a0-aa0a-a0a0-a0a0a0a0a14",
         "name": "pastel 15",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -105,6 +120,7 @@
         "price": 118.99
     },
     {
+        "uuid": "a0a0-aa0a-a0a0-a0a0-a0a0a0a0a15",
         "name": "pastel 16",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -112,6 +128,7 @@
         "price": 119.99
     },
     {
+        "uuid": "aa0a-a0a0-a0a0-a0a0-a0a0a0a0a16",
         "name": "pastel 17",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -119,6 +136,7 @@
         "price": 120.99
     },
     {
+        "uuid": "a0a0-a0a0-a0a0-a0a0-a0a0a0a0a17",
         "name": "pastel 18",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -126,6 +144,7 @@
         "price": 121.99
     },
     {
+        "uuid": "a0a0-a0a0-a0a0-a0a0-a0a0a0a0a18",
         "name": "pastel 19",
         "description": "pastel de chocolate",
         "type": "cake",
@@ -133,6 +152,7 @@
         "price": 122.99
     },
     {
+        "uuid": "a0a0-a0a0-a0a0-a0a0-a0a0a0a0a19",
         "name": "pastel 20",
         "description": "pastel de chocolate",
         "type": "cake",
