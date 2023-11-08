@@ -10,7 +10,7 @@ a {
     color: $secondary;
 
     &:hover {
-        color: $primary;
+        color: $warning;
     }
 }
 
@@ -32,3 +32,30 @@ main {
     background: linear-gradient(45deg, $space, $secondary);
 }
 
+// .coru {
+//     width: 200px;
+//     height: 350px;
+// }
+
+// .customc {
+//     width: 200px;
+//     height: 350px;
+    
+//     img{
+//         width: inherit;
+//         height: inherit;
+//         background-size: cover;
+//     }
+// }
+
+
+footer {
+    background: $dark;
+    height: 15rem;
+    color: white;
+    
+    .gotop {
+        text-align: center;
+        background: $dark2;
+    }
+}

@@ -8,7 +8,7 @@ a {
   color: #ff4081;
 }
 a:hover {
-  color: #10143e;
+  color: #ffc107;
 }
 
 .hd__logo {
@@ -22,4 +22,14 @@ a:hover {
 
 main {
   background: linear-gradient(45deg, #fdb1fe, #ff4081);
+}
+
+footer {
+  background: rgba(41, 17, 17, 0.9647058824);
+  height: 15rem;
+  color: white;
+}
+footer .gotop {
+  text-align: center;
+  background: #3d2121;
 }/*# sourceMappingURL=style.css.map */
