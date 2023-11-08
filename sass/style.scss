@@ -18,7 +18,7 @@ a {
 .hd {
   
     &__logo{
-        width: 130px;
+        width: 110px;
         height: 100px;
 
         img{
@@ -31,23 +31,6 @@ a {
 main {
     background: linear-gradient(45deg, $space, $secondary);
 }
-
-// .coru {
-//     width: 200px;
-//     height: 350px;
-// }
-
-// .customc {
-//     width: 200px;
-//     height: 350px;
-    
-//     img{
-//         width: inherit;
-//         height: inherit;
-//         background-size: cover;
-//     }
-// }
-
 
 footer {
     background: $dark;
