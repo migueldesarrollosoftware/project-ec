@@ -37,4 +37,25 @@ footer {
 footer .gotop {
   text-align: center;
   background: #3d2121;
+}
+
+.about__content {
+  background: url(../assets/about-img.jpg) center center no-repeat;
+  background-size: fixed;
+  background-attachment: fixed;
+  padding: 0;
+  height: 70vh;
+}
+
+.contact__content {
+  background: url(../assets/about-img.jpg) center center no-repeat;
+  background-size: fixed;
+  background-attachment: fixed;
+  padding: 0;
+  height: auto;
+}
+
+.content {
+  background-color: rgba(63, 4, 48, 0.589); /* opacidad del contenido */
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

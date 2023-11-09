@@ -46,3 +46,26 @@ footer {
         background: $dark2;
     }
 }
+
+@mixin bg-used {
+    background: url(../assets/about-img.jpg) center center no-repeat;
+    background-size: fixed;
+    background-attachment: fixed;
+    padding: 0;
+}
+
+
+.about__content {
+    @include bg-used;
+    height: 70vh;
+}
+
+.contact__content {
+    @include bg-used;
+    height: auto;
+}
+
+.content {
+    background-color: rgba(63, 4, 48, 0.589); /* opacidad del contenido */
+    opacity: 1;
+}
