@@ -39,4 +39,21 @@ class Searcher {
     }
 }
 
+class Cart {
+    constructor() {
+        this.carCounter = 0;
+    }
+
+    addToCart(id) {
+        let productsInCar = window.localStorage.getItem('productsInCar');
+        productsInCar = productsInCar ? JSON.parse(productsInCar) : [];
+        productsInCar.push(id);
+        window.localStorage.setItem('productsInCar', JSON.stringify(productsInCar));
+        carCounter.textContent = productsInCar.length;
+        carCounter.style.display = 'block';
+    }
+    get carCounter() {
+        return this.carCounter;
+    }
+}
 export { Products, Searcher };

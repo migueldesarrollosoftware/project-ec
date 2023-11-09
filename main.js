@@ -1,20 +1,28 @@
 import { Products } from './models.js';
-// const productsInCar = window.localStorage.getItem('productsInCar');
 
-// carCounter shows the number of products in the car
+// [init] cartCounter
 const carCounter = document.querySelector('#car_counter');
+carCounter.textContent = window.localStorage.getItem('productsInCar') ? JSON.parse(window.localStorage.getItem('productsInCar')).length : '0';
 carCounter.style.display =  carCounter.textContent === '0' ? 'none' : 'block';
 
-
+// [get] products
 const p = new Products();
 const products  = await p.getProducts();
 const productsIterator = products.values();
 const documentProducts = document.querySelector('#products');
 
+// [add] products to cart
 const addToCart = (id)=> {
     console.log("click" + id)
-
+    let productsInCar = window.localStorage.getItem('productsInCar');
+    productsInCar = productsInCar ? JSON.parse(productsInCar) : [];
+    productsInCar.push(id);
+    window.localStorage.setItem('productsInCar', JSON.stringify(productsInCar));
+    carCounter.textContent = productsInCar.length;
+    carCounter.style.display = 'block';
 }
+
+// [add] populate products
 for (const p of productsIterator) {
     const productContainer = document.createElement('div');
     productContainer.className = 'col-3 my-3 text-black rounded ';
@@ -37,12 +45,10 @@ for (const p of productsIterator) {
             </div>
         </div>
     `;
-
-    // Agrega el contenedor del producto al documento
     documentProducts.appendChild(productContainer);
-
-    // Agrega el evento de clic al botón después de agregarlo al DOM
     const addToCartButton = productContainer.querySelector(`#${p.uuid}`);
+    // [add] event to addToCartButton
     addToCartButton.addEventListener('click', () => addToCart(p.uuid));
 }
+
 
