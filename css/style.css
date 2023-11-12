@@ -58,4 +58,16 @@ footer .gotop {
 .content {
   background-color: rgba(63, 4, 48, 0.589); /* opacidad del contenido */
   opacity: 1;
+}
+
+.aside-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: #fdb1fe;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
 }/*# sourceMappingURL=style.css.map */
