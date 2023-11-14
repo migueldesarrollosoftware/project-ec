@@ -9,6 +9,7 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <title>Home</title>
 </head>
+
 <body>
     <!-- whatsapp icon ficed -->
     <!-- <div class="fixed-bottom d-flex justify-content-end align-items-center">
@@ -19,12 +20,12 @@
     <div id="aside-cart" class="aside-cart">
         <div class="container my-5 mx-4">
             <h4 class="text-danger text-center">Mi carrito</h4>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
+            <button id="cart-btn-clear" class="btn">Limpiar</button>
+            <div id="aside-cart-products">
+            </div>
         </div>
         <div class="d-flex justify-content-end mx-4">
-            <input type="button"  value="regresar" class="btn btn-danger" id="btn-cart-return">
+            <input type="button" value="regresar" class="btn btn-danger" id="btn-cart-return">
         </div>
     </div>
     <header class="">
@@ -41,10 +42,10 @@
                         aria-describedby="inputGroup-sizing-sm" placeholder="Busca algo delicioso aqui">
                 </div>
             </div>
-            <div class="hd__car mx-5 d-flex justify-direction-center align-items-center">
+            <button id="cart-btn" class="hd__car  btn mx-5 d-flex justify-direction-center align-items-center">
                 <img src="./assets/svg/shopping_cart-1.svg" alt="shopping-cart">
                 <p id="car_counter" class="text-warning"></p>
-            </div>
+            </button>
         </section>
 
         <nav class="container d-flex justify-content-evenly align-items-center text-danger mb-3">
@@ -128,7 +129,7 @@
         <hr class="mx-5">
         <section>
             <div id="products" class="container row mx-auto">
-                
+
             </div>
         </section>
         <br>
@@ -138,29 +139,29 @@
             <a href="#" class="btn text-white my-1">Inicio de página</a>
         </div>
         <div class="d-flex justify-content-around align-items-center my-5 mx-3">
-        <p>
-            &copy; 2023, Todos los derechos reservados <br>
-            <strong>
-                Loves Cakes by July
-            </strong>
-        </p>
-        <div>
-            <div class="text-center">Siguenos en:</div>
-            <ul class="mt-2">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Whatsapp</a></li>
-                <li><a href="#">Youtube</a></li>
-            </ul>
-        </div>
+            <p>
+                &copy; 2023, Todos los derechos reservados <br>
+                <strong>
+                    Loves Cakes by July
+                </strong>
+            </p>
+            <div>
+                <div class="text-center">Siguenos en:</div>
+                <ul class="mt-2">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script type="module" src="main.js"></script> 
-        <script type="module" src="models.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="models.js"></script>
 </body>
 
 </html>

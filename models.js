@@ -10,6 +10,16 @@ class Services {
       console.log(error);
     }
   }
+
+  async getProductsByUuid(uuid) {
+    try {
+      const products = await this.getProducts();
+      const product = products.find((product) => product.uuid === uuid);
+      return product;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 class Render {
@@ -43,13 +53,25 @@ class Render {
       this.selector.selectProducts.appendChild(productContainer);
       const addToCartButton = productContainer.querySelector(`#${p.uuid}`);
       // [add] event to addToCartButton
-      addToCartButton.addEventListener("click", () =>
-        cart.addToCart(p.uuid, this.selector.selectCartCounter)
+      addToCartButton.addEventListener(
+        "click",
+        async () => await cart.addToCart(p.uuid)
       );
     }
   }
 
-
+  async showProductsInCart(productsInCar) {
+    const productsIterator = productsInCar.values();
+    const selectorCartProducts = this.selector.selectAsideCartProducts;
+    selectorCartProducts.innerHTML = "";
+    // [add] populate products
+    for (const product of productsIterator) {
+      const productContainer = document.createElement("div");
+      productContainer.className = "d-flex flex-column my-3 text-black rounded";
+      productContainer.innerHTML = `<div>${product._name} | ${product._price} | ${product._quantity}</div>`;
+      selectorCartProducts.appendChild(productContainer);
+    }
+  }
 }
 
 class Product {
@@ -79,17 +101,29 @@ class Searcher {
   }
 }
 
+// {
+//     "uuid": "aa0a-a0a0-a0a0-a0a0-a0a0a0a0a16",
+//     "name": "pastel 17",
+//     "description": "pastel de chocolate",
+//     "type": "cake",
+//     "path": "./assets/products/p-17.jpg",
+//     "price": 120.99
+// },
+
 class ProductSelected {
-  constructor(id) {
-    this._id = id;
+  constructor(uuid, name, path, price) {
+    this._uuid = uuid;
+    this._name = name;
+    this._path = path;
+    this._price = price;
     this._quantity = 1;
   }
   // getters and setters
-  get id() {
-    return this._id;
+  get uuid() {
+    return this._uuid;
   }
-  set id(id) {
-    this._id = id;
+  set uuid(uuid) {
+    this._uuid = uuid;
   }
   get quantity() {
     return this._quantity;
@@ -103,18 +137,27 @@ class Cart {
   constructor(selector) {
     this._cartCounter = this.cartCounter;
     this.selector = selector;
+    this.services = new Services();
     this.initCart();
   }
 
-  addToCart(id, cartCounterSelector) {
-    console.log("click" + id);
+  async addToCart(uuid) {
+    console.log("click" + uuid);
     let productsInCar = window.localStorage.getItem("productsInCar");
     productsInCar = productsInCar ? JSON.parse(productsInCar) : [];
-    const productoAdded = new ProductSelected(id);
+    const product = await this.services.getProductsByUuid(uuid);
+    console.log("product", product);
+    const productoAdded = new ProductSelected(
+      product.uuid,
+      product.name,
+      product.path,
+      product.price
+    );
     productsInCar.push(productoAdded);
     window.localStorage.setItem("productsInCar", JSON.stringify(productsInCar));
-    cartCounterSelector.textContent = productsInCar.length;
-    cartCounterSelector.style.display = "block";
+    const selectorCartCounter = this.selector.selectCartCounter;
+    selectorCartCounter.textContent = productsInCar.length;
+    selectorCartCounter.style.display = "block";
   }
 
   get cartCounter() {
@@ -123,11 +166,22 @@ class Cart {
       : "0";
   }
 
+  async productsInCar() {
+    return window.localStorage.getItem("productsInCar")
+      ? JSON.parse(window.localStorage.getItem("productsInCar"))
+      : [];
+  }
+
   initCart() {
     const carCounter = this.selector.selectCartCounter;
     carCounter.textContent = this._cartCounter;
     carCounter.style.display =
       carCounter.textContent === "0" ? "none" : "block";
+  }
+
+  clearCart() {
+    window.localStorage.removeItem("productsInCar");
+    this.initCart();
   }
 }
 
@@ -137,6 +191,11 @@ class Selector {
     this._selectProducts = document.querySelector("#products");
     this._selectBtnCartReturn = document.querySelector("#btn-cart-return");
     this._selectAsideCart = document.querySelector("#aside-cart");
+    this._selectAsideCartProducts = document.querySelector(
+      "#aside-cart-products"
+    );
+    this._selectCartBtn = document.querySelector("#cart-btn");
+    this._selectCartBtnClear = document.querySelector("#cart-btn-clear");
   }
   get selectCartCounter() {
     return this._selectCartCounter;
@@ -149,6 +208,15 @@ class Selector {
   }
   get selectAsideCart() {
     return this._selectAsideCart;
+  }
+  get selectAsideCartProducts() {
+    return this._selectAsideCartProducts;
+  }
+  get selectCartBtn() {
+    return this._selectCartBtn;
+  }
+  get selectCartBtnClear() {
+    return this._selectCartBtnClear;
   }
 }
 export { Product, Searcher, Cart, ProductSelected, Selector, Render, Services };

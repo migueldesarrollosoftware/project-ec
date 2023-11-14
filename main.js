@@ -8,7 +8,8 @@ const products  = await service.getProducts();
 const render = new Render(selector);
 
 // [initial] render products
-render.showProducts(products, selector, cart);
+render.showProducts(products, cart);
+render.showProductsInCart((await cart.productsInCar()).reverse());
 
 //[add] event hide/show cart
 const btnCartReturn = selector._selectBtnCartReturn;
@@ -16,4 +17,16 @@ const asideCart = selector._selectAsideCart;
 btnCartReturn.addEventListener('click', () => {
     asideCart.style.transform = 'translateX(100%)'; 
     asideCart.style.transition = 'transform 0.3s ease-in-out';
+});
+
+// [add] event show cart aside
+selector.selectCartBtn.addEventListener('click', async () => {
+    asideCart.style.transform = 'translateX(0%)';
+    asideCart.style.transition = 'transform 0.3s ease-in-out';
+    render.showProductsInCart((await cart.productsInCar()).reverse());
+});
+
+// [add] event to clear cart
+selector.selectCartBtnClear.addEventListener('click', async () => {
+    await cart.clearCart();
 });
