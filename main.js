@@ -11,10 +11,9 @@ const render = new Render(selector);
 render.showProducts(products, cart);
 render.showProductsInCart((await cart.productsInCar()).reverse());
 
-//[add] event hide/show cart
-const btnCartReturn = selector._selectBtnCartReturn;
-const asideCart = selector._selectAsideCart;
-btnCartReturn.addEventListener('click', () => {
+//[add] event hide cart
+const asideCart = selector.selectAsideCart;
+selector.selectBtnCartReturn.addEventListener('click', () => {
     asideCart.style.transform = 'translateX(100%)'; 
     asideCart.style.transition = 'transform 0.3s ease-in-out';
 });
