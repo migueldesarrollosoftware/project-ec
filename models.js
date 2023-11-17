@@ -28,10 +28,17 @@ class Render {
   }
   async showProducts(products, cart) {
     const productsIterator = products.values();
+    if (products.length === 0) {
+      this.selector.selectProducts.innerHTML = `
+            <div class="col-12 text-center">
+                <h3>No se encontraron productos</h3>
+            </div>
+        `;
+    }
     // [add] populate products
     for (const p of productsIterator) {
       const productContainer = document.createElement("div");
-      productContainer.className = "col-3 my-3 text-black rounded ";
+      productContainer.className = "col-12 col-sm-6 col-md-4 col-lg-3 my-3 text-black rounded ";
       productContainer.innerHTML = `
                 <div class="p-3 h-100 rounded border ">
                     <div class="d-flex justify-content-between align-items-center flex-column h-100">
@@ -58,6 +65,10 @@ class Render {
         async () => await cart.addToCart(p.uuid)
       );
     }
+  }
+
+  cleanStoreProducts(){
+    this.selector.selectProducts.innerHTML = '';
   }
 
   async showProductsInCart(productsInCar) {
@@ -90,7 +101,7 @@ class Searcher {
   async search(search) {
     try {
       const service = new Services();
-      const products = service.getProducts();
+      const products = await service.getProducts();
       const searched = products.filter((product) =>
         product.name.toLowerCase().includes(search.toLowerCase())
       );
@@ -196,6 +207,7 @@ class Selector {
     );
     this._selectCartBtn = document.querySelector("#cart-btn");
     this._selectCartBtnClear = document.querySelector("#cart-btn-clear");
+    this._searcher =  document.querySelector('#searcher');
   }
   get selectCartCounter() {
     return this._selectCartCounter;
@@ -217,6 +229,9 @@ class Selector {
   }
   get selectCartBtnClear() {
     return this._selectCartBtnClear;
+  }
+  get searcher() {
+    return this._searcher;
   }
 }
 export { Product, Searcher, Cart, ProductSelected, Selector, Render, Services };
