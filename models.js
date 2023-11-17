@@ -169,6 +169,15 @@ class Cart {
     const selectorCartCounter = this.selector.selectCartCounter;
     selectorCartCounter.textContent = productsInCar.length;
     selectorCartCounter.style.display = "block";
+
+    // aside cart
+    const asideCart = this.selector.selectAsideCart;
+    asideCart.style.transform = 'translateX(0%)';
+    asideCart.style.transition = 'transform 0.3s ease-in-out';
+    const render = new Render(this.selector);
+    this.productsInCar().then(products => {
+        render.showProductsInCart(products.reverse());
+    });
   }
 
   get cartCounter() {
@@ -193,6 +202,10 @@ class Cart {
   clearCart() {
     window.localStorage.removeItem("productsInCar");
     this.initCart();
+    const render = new Render(this.selector);
+    this.productsInCar().then(products => {
+      render.showProductsInCart(products.reverse());
+  });
   }
 }
 
