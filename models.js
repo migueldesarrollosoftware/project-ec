@@ -1,5 +1,4 @@
 class Services {
-  constructor() {}
 
   async getProducts() {
     try {
@@ -31,7 +30,8 @@ class Render {
     if (products.length === 0) {
       this.selector.selectProducts.innerHTML = `
             <div class="col-12 text-center">
-                <h3>No se encontraron productos</h3>
+                <h3>Ups! Producto no encontrado con ese nombre</h3>
+                <p>Intenta buscando algún otro</p>
             </div>
         `;
     }
@@ -96,7 +96,6 @@ class Product {
 }
 
 class Searcher {
-  constructor() {}
 
   async search(search) {
     try {
