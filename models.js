@@ -49,7 +49,7 @@ class Render {
                             <hr class="w-100">
                             <h4>${p.name}</h4>
                             <p>${p.description}</p>
-                            <p><strong class="text-danger">${p.price}</strong></p>
+                            <p><strong class="text-warning">S/.${p.price}</strong></p>
                             <button class="btn btn-danger shadow text-white" id="${p.uuid}">
                                 <img src="./assets/svg/add-shopping-cart.svg" alt="add_cart">
                             </button>
@@ -79,7 +79,15 @@ class Render {
     for (const product of productsIterator) {
       const productContainer = document.createElement("div");
       productContainer.className = "d-flex flex-column my-3 text-black rounded";
-      productContainer.innerHTML = `<div>${product._name} | ${product._price} | ${product._quantity}</div>`;
+      // ${product._name} | ${product._price} | ${product._quantity}
+      //<input type="number" class="mx-1 text-center" value="${product._quantity}" min="1" max="10">
+      //<p class="mx-1">${product._quantity}</p>
+      productContainer.innerHTML = `<div class="d-flex justify-content-center align-items-center flex-column border rounded shadow mx-sm-5">
+        <p class="mx-1">${product._name}</p>
+        <img src="${product._path}" alt="${product._name}" class="img-fluid rounded shadow w-25">
+        <p class="mx-1">S/.${product._price * product._quantity}</p>
+                
+      </div>`;
       selectorCartProducts.appendChild(productContainer);
     }
   }
