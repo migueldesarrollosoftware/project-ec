@@ -1,0 +1,12 @@
+@import "../variables";
+
+@mixin button($color) {
+  background: $color;
+}
+
+@mixin bg-used {
+    background: url(../assets/about-img.jpg) center center no-repeat;
+    background-size: fixed;
+    background-attachment: fixed;
+    padding: 0;
+}

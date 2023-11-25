@@ -64,7 +64,6 @@ footer .gotop {
   position: fixed;
   top: 0;
   right: 0;
-  width: 30%;
   height: 100%;
   background: rgba(255, 255, 255, 0.907);
   margin: 0;
@@ -72,4 +71,16 @@ footer .gotop {
   z-index: 100;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
+}
+.aside-cart .title-color {
+  color: #64052d;
+}
+
+.p__quantity:before {
+  content: "Cantidad: ";
+  color: #64052d;
+}
+
+.img-cart {
+  width: 7rem;
 }/*# sourceMappingURL=style.css.map */

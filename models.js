@@ -81,12 +81,16 @@ class Render {
       productContainer.className = "d-flex flex-column my-3 text-black rounded";
       // ${product._name} | ${product._price} | ${product._quantity}
       //<input type="number" class="mx-1 text-center" value="${product._quantity}" min="1" max="10">
-      //<p class="mx-1">${product._quantity}</p>
-      productContainer.innerHTML = `<div class="d-flex justify-content-center align-items-center flex-column border rounded shadow mx-sm-5">
-        <p class="mx-1">${product._name}</p>
-        <img src="${product._path}" alt="${product._name}" class="img-fluid rounded shadow w-25">
+      //
+      productContainer.innerHTML = `<div class="d-flex justify-content-center align-items-center  border rounded shadow flex-md-row flex-column mx-sm-auto p-2">
+      <div class="cart_prd_img w-md-100 p-3">
+      <img src="${product._path}" alt="${product._name}" class="rounded shadow img-cart w-md-100">
+      </div>
+      <div class="cart_prd_details d-flex flex-column justify-content-center align-items-center">
+        <p class="mx-1 title-color">${product._name}</p>
         <p class="mx-1">S/.${product._price * product._quantity}</p>
-                
+        <p class="mx-1 p__quantity">${product._quantity}</p>        
+      </div>
       </div>`;
       selectorCartProducts.appendChild(productContainer);
     }
@@ -134,7 +138,7 @@ class ProductSelected {
     this._name = name;
     this._path = path;
     this._price = price;
-    this._quantity = 1;
+    this._quantity = 1; 
   }
   // getters and setters
   get uuid() {

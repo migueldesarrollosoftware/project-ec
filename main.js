@@ -33,7 +33,7 @@ selector.selectCartBtnClear.addEventListener('click', async () => {
     await cart.clearCart();
 });
 
-// debounce function
+// [add] debounce function
 function debounce(func){
     let timer = null;
     return function(...args){
