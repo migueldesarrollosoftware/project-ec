@@ -81,6 +81,11 @@ footer .gotop {
   color: #64052d;
 }
 
+.p__total:before {
+  content: "Total: ";
+  color: #64052d;
+}
+
 .img-cart {
   width: 7rem;
 }/*# sourceMappingURL=style.css.map */

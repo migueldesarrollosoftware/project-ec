@@ -1,4 +1,8 @@
-import {Cart, Selector, Render, Services, Searcher} from './models.js';
+import { Selector } from './models/selector.js';
+import { Render } from './models/render.js';
+import { Searcher } from './models/searcher.js';
+import { Cart } from './models/cart.js';
+import { Services } from './services/service.js';
 
 // [get] products
 const selector = new Selector();

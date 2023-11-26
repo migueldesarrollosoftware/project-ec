@@ -90,6 +90,13 @@ footer {
     }
 }
 
+.p__total{
+    &:before {
+        content: "Total: ";
+        color: $primary;
+    }
+}
+
 .img-cart {
     width: 7rem;
 }
